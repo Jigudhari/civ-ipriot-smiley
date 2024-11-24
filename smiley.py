@@ -7,22 +7,26 @@ class Smiley:
     RED = (255, 0, 0)
     YELLOW = (255, 255, 0)
     BLANK = (0, 0, 0)
+    BLUE = (0, 0, 255)
 
-    def __init__(self):
+    def complexion(self):
+        return self.my_complexion
+
+    def __init__(self, complexion=None):
         # We have encapsulated the SenseHat object
         self.sense_hat = SenseHat()
+        self.my_complexion = complexion if complexion else self.YELLOW
 
-        Y = self.YELLOW
         O = self.BLANK
         self.pixels = [
-            O, Y, Y, Y, Y, Y, Y, O,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            O, Y, Y, Y, Y, Y, Y, O,
+            O, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, O,
+            self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion,
+            self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion,
+            self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion,
+            self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion,
+            self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion,
+            self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion,
+            O, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, self.my_complexion, O,
         ]
 
     def dim_display(self, dimmed=True):
